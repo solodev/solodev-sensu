@@ -4,6 +4,12 @@
 #
 # Copyright (c) 2016 Solodev, All Rights Reserved.
 
+solodev_secrets = JSON.parse(citadel["secrets.json"])
+
+rabbitmq_hosts = solodev_secrets["sensu"]["rabbitmq"]["hosts"]
+
+node.override["sensu"]["rabbitmq"]["hosts"] = rabbitmq_hosts
+
 set_sensu_state(node, "ssl", "client", "cert", citadel["sensu/ssl/client/cert.pem"])
 set_sensu_state(node, "ssl", "client", "key", citadel["sensu/ssl/client/key.pem"])
 
