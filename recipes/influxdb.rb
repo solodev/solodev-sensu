@@ -6,6 +6,14 @@
 
 include_recipe "influxdb"
 
+include_recipe "build-essential"
+
+sensu_gem "rest-client"
+
+cookbook_file "/etc/sensu/plugins/metrics-customer-billing.rb" do
+  mode "0755"
+end
+
 influxdb_database "sensu"
 
 solodev_secrets = JSON.parse(citadel["secrets.json"])
@@ -31,12 +39,4 @@ grafana_datasource "influxdb" do
       :isdefault => true
     })
   action :create
-end
-
-include_recipe "build-essential"
-
-sensu_gem "rest-client"
-
-cookbook_file "/etc/sensu/plugins/metrics-customer-billing.rb" do
-  mode "0755"
 end
