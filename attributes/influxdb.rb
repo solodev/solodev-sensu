@@ -1,1 +1,1 @@
-override["influxdb"]["version"] = "0.13.0"
+override["influxdb"]["version"] = "0.13.0-1"
