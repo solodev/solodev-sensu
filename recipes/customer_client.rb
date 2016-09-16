@@ -10,6 +10,8 @@ rabbitmq_hosts = solodev_secrets["sensu"]["rabbitmq"]["hosts"]
 
 node.override["sensu"]["rabbitmq"]["hosts"] = rabbitmq_hosts
 
+Chef::Log.warn(node["sensu"]["rabbitmq"]["hosts"].inspect)
+
 set_sensu_state(node, "ssl", "client", "cert", citadel["sensu/ssl/client/cert.pem"])
 set_sensu_state(node, "ssl", "client", "key", citadel["sensu/ssl/client/key.pem"])
 
