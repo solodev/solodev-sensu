@@ -4,7 +4,7 @@ maintainer_email 'smoore@solodev.com'
 license 'all_rights'
 description 'Installs/Configures solodev_sensu'
 long_description 'Installs/Configures solodev_sensu'
-version '0.1.7'
+version '0.1.8'
 
 depends "sensu"
 depends "hostsfile"
