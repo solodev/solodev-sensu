@@ -5,6 +5,7 @@
 # Copyright (c) 2016 Solodev, All Rights Reserved.
 
 include_recipe "influxdb"
+include_recipe "grafana"
 
 include_recipe "build-essential"
 
@@ -25,8 +26,6 @@ influxdb_user influxdb_username do
   password influxdb_password
   databases ["sensu"]
 end
-
-include_recipe "grafana"
 
 grafana_datasource "influxdb" do
   source({
