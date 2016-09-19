@@ -4,6 +4,8 @@
 #
 # Copyright (c) 2016 Solodev, All Rights Reserved.
 
+include_recipe "sudo"
+
 backup_command = "/usr/bin/duply backup backup"
 
 sudo "sensu_duply" do
