@@ -9,6 +9,7 @@ backup_command = "/usr/bin/duply backup backup"
 sudo "sensu_duply" do
   user "sensu"
   runas "root"
+  nopasswd true
   commands [backup_command]
 end
 
