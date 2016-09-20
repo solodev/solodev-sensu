@@ -54,6 +54,6 @@ end
 
 sensu_check "run_duply_backups" do
   command "sudo /usr/bin/duply backup backup"
-  subscribers ["SolodevControl"]
+  subscribers ["SolodevControl", "SolodevProfessional"]
   publish false
 end
