@@ -34,3 +34,8 @@ sensu_snippet "hipchat" do
       :room => hipchat_room
     })
 end
+
+sensu_handler "default" do
+  type "set"
+  handlers ["hipchat"]
+end
